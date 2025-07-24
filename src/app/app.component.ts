@@ -13,30 +13,31 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  count:number = 0
-  handleIncrement(){
-    this.count = this.count + 1
-  }
+ username="";
 
-   handleDecrement(){
-    this.count = this.count - 1
-  }
+getUserName(event: Event){
+  // this.username = (event.target as HTMLInputElement).value
+  // console.log(name);
+  // this.username=name
+}
 
-   handleReset(){
-    this.count = 0
-  }
+setUserName(){
+  this.username="Peter"
+}
 
-  handleCounter(val:string){
-    if(val=='minus'){
-      this.count=this.count-1
-    }else if(val=='plus'){
-      this.count=this.count+1
-    }else{
-      this.count = 0
-    }
-  }
+getUserNameWithTemplate(val:string){
+  this.username=val
+  console.log(val)
+}
+
    title = 'Code Step By Step';
 }
+
+
+
+
+
+
 
 
 
@@ -86,4 +87,27 @@ export class AppComponent {
   // sum(a:number,b:number){
   //   let x : number | string = 10
   // console.log(a+b);
+  // }
+
+   // count:number = 0
+  // handleIncrement(){
+  //   this.count = this.count + 1
+  // }
+
+  //  handleDecrement(){
+  //   this.count = this.count - 1
+  // }
+
+  //  handleReset(){
+  //   this.count = 0
+  // }
+
+  // handleCounter(val:string){
+  //   if(val=='minus'){
+  //     this.count=this.count-1
+  //   }else if(val=='plus'){
+  //     this.count=this.count+1
+  //   }else{
+  //     this.count = 0
+  //   }
   // }
