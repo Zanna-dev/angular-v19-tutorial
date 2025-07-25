@@ -16,13 +16,16 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
-    color='red'
-    handlColor(val:string){
-      this.color=val;
-    }
-    changeColor(event:Event){
-  this.color = (event.target as HTMLInputElement).value
-    }
+  users=['Anil', 'Sam', 'Peter', 'Bruce','Tony'];
+  students=[
+    {name:'Anil',age:29,email:'anil@test.com'},
+    {name:'Sam',age:20,email:'sam@test.com'},
+    {name:'Peter',age:26,email:'peter@test.com'},
+    {name:'Bruce',age:43,email:'bruce@test.com'},
+  ]
+  getName(name:string){
+    console.log(name)
+  }
 
    title = 'Code Step By Step';
 }
@@ -141,3 +144,12 @@ export class AppComponent {
   // }
 
   // displayDiv=true
+
+
+  //   color='red'
+  //   handlColor(val:string){
+  //     this.color=val;
+  //   }
+  //   changeColor(event:Event){
+  // this.color = (event.target as HTMLInputElement).value
+  //   }

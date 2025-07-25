@@ -1,31 +1,17 @@
-<h1>Switch Case in Angular 19</h1>
-<button (click)="handlColor('red')">Red</button>
-<button (click)="handlColor('green')">Green</button>
-<button (click)="handlColor('yellow')">Yellow</button>
-<button (click)="handlColor('blue')">Blue</button>
+<h1>For Loop in Angular 19</h1>
 
-<input type="text" placeholder="Enter color" (input)="changeColor($event)">
-
-
-@switch(color){
-@case('red'){
-<h1 style="background-color: red;">Red color</h1>
+@for (user of users; track user) {
+    <h2> {{user}} </h2>
 }
-
-@case('blue'){
-<h1 style="background-color: blue;">Blue color</h1>
-}
-
-@case('yellow'){
-<h1 style="background-color: yellow;">Yellow color</h1>
-}
-
-@case('green'){
-<h1 style="background-color: green;">Green color</h1>
-}@default {
-    <h1 style="background-color: black; color: white;">No color Match</h1>
-}
-
+<hr>
+@for (student of students; track student.name; let id=$index) {
+    <h2>
+        <span>{{id+1}}</span>
+        <span>{{student.name}}</span>
+        <span>{{student.age}}</span>
+        <span>{{student.email}}</span>
+        <button (click)="getName(student.name)">Get Name</button>
+    </h2>
 }
 
 
@@ -58,7 +44,10 @@
 
 
 
-
+<!-- <h1>{{users[0]}}</h1>
+<h1>{{users[1]}}</h1>
+<h1>{{users[2]}}</h1>
+<h1>{{users[3]}}</h1> -->
 
 
 
@@ -155,4 +144,35 @@ placeholder="eneter user name">
 <div style="background-color: red; width: 100px; height: 100px;">
 
 </div>
+} -->
+
+
+<!-- <h1>Switch Case in Angular 19</h1>
+<button (click)="handlColor('red')">Red</button>
+<button (click)="handlColor('green')">Green</button>
+<button (click)="handlColor('yellow')">Yellow</button>
+<button (click)="handlColor('blue')">Blue</button>
+
+<input type="text" placeholder="Enter color" (input)="changeColor($event)">
+
+
+@switch(color){
+@case('red'){
+<h1 style="background-color: red;">Red color</h1>
+}
+
+@case('blue'){
+<h1 style="background-color: blue;">Blue color</h1>
+}
+
+@case('yellow'){
+<h1 style="background-color: yellow;">Yellow color</h1>
+}
+
+@case('green'){
+<h1 style="background-color: green;">Green color</h1>
+}@default {
+    <h1 style="background-color: black; color: white;">No color Match</h1>
+}
+
 } -->
