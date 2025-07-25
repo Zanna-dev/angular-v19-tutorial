@@ -1,4 +1,4 @@
-import { Component, computed, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -17,26 +17,27 @@ import { UserComponent } from './user/user.component';
 
 export class AppComponent {
  
-//  data = computed(()=>20)
-//  count = signal(20)
+userName=signal('Anil');
+count=signal(0)
+displayHeading=false
 
- x=signal(20);
-  y=signal(30);
-  z=computed(()=>this.x()+this.y());
+constructor(){
+  effect(()=>{
+  if(this.count()==2){
+    this.displayHeading=true
+    setTimeout(()=>{
+      this.displayHeading=false
+    }, 2000)
+  }else{
+    this.displayHeading=false
+  }
 
- updateValue(){
- console.log(this.z());
- this.x.set(100);
-//  console.log(this.z);
- }
-
- updateXValue(){
-  this.x.set(1000)
- }
+    // console.log(this.userName())
+  })
+}
  
  title = 'Code Step By Step';
 }
-
 
 
 
@@ -208,3 +209,21 @@ export class AppComponent {
   //   // this.data.set(true)
   //   this.data.update(val=>val+10)
   //  }
+
+
+  //  data = computed(()=>20)
+//  count = signal(20)
+
+//  x=signal(20);
+//   y=signal(30);
+//   z=computed(()=>this.x()+this.y());
+
+//  updateValue(){
+//  console.log(this.z());
+//  this.x.set(100);
+//  console.log(this.z);
+ //}
+
+//  updateXValue(){
+//   this.x.set(1000)
+//  }
