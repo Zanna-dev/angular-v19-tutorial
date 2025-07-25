@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -16,13 +16,29 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
-  handleEvent(event:Event){
-    console.log("function called",event.type);
-    // console.log("function called",(event.target as HTMLInputElement).name);
-    console.log("function called",(event.target as HTMLInputElement).value);
+ //data =  100;  
+ count = signal(10);
+
+ constructor(){
+  effect(()=>{
+    console.log(this.count());
   }
 
-   title = 'Code Step By Step';
+  )
+ }
+ 
+ updateValue(val:string){
+  // this.data=200
+  if(val=='dec'){
+ this.count.set(this.count()-1)
+  }else{
+     this.count.set(this.count()+1)
+  }
+ 
+ }
+ 
+ 
+ title = 'Code Step By Step';
 }
 
 
@@ -157,4 +173,11 @@ export class AppComponent {
   // ]
   // getName(name:string){
   //   console.log(name)
+  // }
+
+
+   // handleEvent(event:Event){
+  //   console.log("function called",event.type);
+  //   // console.log("function called",(event.target as HTMLInputElement).name);
+  //   console.log("function called",(event.target as HTMLInputElement).value);
   // }

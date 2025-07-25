@@ -1,18 +1,8 @@
-<h1>Event in Angular 19</h1> 
-<button class="btn" name="login" (click)="handleEvent($event)">Click on Button</button>
-<br><br>
-<div (mouseenter)="handleEvent($event)" 
-style="background-color: green; height: 100px; width: 100px;">
-     
-</div>
-
-<div ((mouseleave))="handleEvent($event)" 
-style="background-color: red; height: 100px; width: 100px;">
-     
-</div>
-<br><br>
-<input (blur)="handleEvent($event)" (focus)="handleEvent($event)" (input)="handleEvent($event)" type="text" name="user">
-
+<h1>Basic Of Signal</h1> 
+<!-- <h1>{{data}}</h1> -->
+ <button (click)="updateValue('dec')">Decreament</button>
+<h2>{{count()}}</h2>
+<button (click)="updateValue('inc')">Increament</button>
 
 
 
@@ -191,3 +181,18 @@ placeholder="eneter user name">
         <button (click)="getName(student.name)">Get Name</button>
     </h2>
 } --> 
+
+<!-- <h1>Event in Angular 19</h1> 
+<button class="btn" name="login" (click)="handleEvent($event)">Click on Button</button>
+<br><br>
+<div (mouseenter)="handleEvent($event)" 
+style="background-color: green; height: 100px; width: 100px;">
+     
+</div>
+
+<div ((mouseleave))="handleEvent($event)" 
+style="background-color: red; height: 100px; width: 100px;">
+     
+</div>
+<br><br>
+<input (blur)="handleEvent($event)" (focus)="handleEvent($event)" (input)="handleEvent($event)" type="text" name="user"> -->
