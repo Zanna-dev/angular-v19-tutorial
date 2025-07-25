@@ -9,11 +9,30 @@ import { UserComponent } from './user/user.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [ProfileComponent,UserComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  display=true
+  val=10
+  displayOneDiv=true
+  hide(){
+    this.display=false
+  }
+
+  show(){
+    this.display=true
+  }
+
+  toggle(){
+    this.display=!this.display
+  }
+  toggleDivs(){
+    this.displayOneDiv=!this.displayOneDiv
+  }
+
+  // displayDiv=true
 
 
    title = 'Code Step By Step';

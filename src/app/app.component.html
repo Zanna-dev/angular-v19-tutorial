@@ -1,19 +1,37 @@
-<style>
-    h2{
-        color: orange;
-        background-color: #000;
-    }
+<h1>If Else | Control Flow</h1>
 
-</style>
+<!-- @if(val==10){
+
+<div style="background-color: orange; height: 200px; width: 200px;">
+
+</div>
+} -->
+
+<button (click)="hide()">Hide</button>
+<button (click)="show()">Show</button>
+<button (click)="toggle()">Toggle</button>
+<button (click)="toggle()"> {{
+    display? 'hide':'show' }} </button>
+@if(display){
+
+<div style="background-color: green; height: 200px; width: 200px;">
+
+</div>
+}
+
 <hr>
-<app-user></app-user>
-<hr>
-<h1>Style Rules and Option</h1>
-<app-profile></app-profile>
-<h1>Heading 2</h1>
-<h2>Heading Tag 2</h2>
-<h2>Apple</h2>
-<h3 style="background-color: gold; color: #000; font-size: 50px;">This is Heading 3</h3>
+<button (click)="toggleDivs()">Toggle Divs</button>
+@if(displayOneDiv){
+<div style="background-color: blue; width: 100px; height: 100px;">
+
+</div>
+}
+@else{
+<div style="background-color: red; width: 100px; height: 100px;">
+
+</div>
+}
+
 
 
 
@@ -80,7 +98,7 @@
 <!-- <button (click)="otherFunction()">Click me</button> -->
 <!-- <h1>Define Data Type</h1>
  <button (click)="sum(100,20)">Sum</button> -->
- <!-- <h1>Get and Set Input field Value</h1>
+<!-- <h1>Get and Set Input field Value</h1>
 <h2>{{username}}</h2>
 <input value="{{username}}" 
 (input)="getUserName($event)" 
@@ -92,3 +110,19 @@ placeholder="eneter user name">
 <button (click)="getUserNameWithTemplate(userNameField.value)">Get User name</button>
 <button (click)="setUserName()">Set User name</button>
  -->
+<!-- <style>
+    h2{
+        color: orange;
+        background-color: #000;
+    }
+
+</style>
+<hr>
+<app-user></app-user>
+<hr>
+<h1>Style Rules and Option</h1>
+<app-profile></app-profile>
+<h1>Heading 2</h1>
+<h2>Heading Tag 2</h2>
+<h2>Apple</h2>
+<h3 style="background-color: gold; color: #000; font-size: 50px;">This is Heading 3</h3> -->
