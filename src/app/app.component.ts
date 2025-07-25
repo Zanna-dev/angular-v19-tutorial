@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, computed, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -16,15 +16,23 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
-  //  data = signal<number | string>(10)
-  data:WritableSignal<number> = signal(10)
-  // count : Signal<number>=computed(()=>20
-
-  updateValue(){
-    // this.data.set(true)
-    this.data.update(val=>val+10)
-   }
  
+//  data = computed(()=>20)
+//  count = signal(20)
+
+ x=signal(20);
+  y=signal(30);
+  z=computed(()=>this.x()+this.y());
+
+ updateValue(){
+ console.log(this.z());
+ this.x.set(100);
+//  console.log(this.z);
+ }
+
+ updateXValue(){
+  this.x.set(1000)
+ }
  
  title = 'Code Step By Step';
 }
@@ -190,3 +198,13 @@ export class AppComponent {
 //   }
  
 //  }
+
+
+ //  data = signal<number | string>(10)
+  // data:WritableSignal<number> = signal(10)
+  // count : Signal<number>=computed(()=>20
+
+  // updateValue(){
+  //   // this.data.set(true)
+  //   this.data.update(val=>val+10)
+  //  }
