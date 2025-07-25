@@ -3,32 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [],
+  imports: [ProfileComponent,UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- username="";
 
-getUserName(event: Event){
-  // this.username = (event.target as HTMLInputElement).value
-  // console.log(name);
-  // this.username=name
-}
-
-setUserName(){
-  this.username="Peter"
-}
-
-getUserNameWithTemplate(val:string){
-  this.username=val
-  console.log(val)
-}
 
    title = 'Code Step By Step';
 }
@@ -111,3 +97,20 @@ getUserNameWithTemplate(val:string){
   //     this.count = 0
   //   }
   // }
+  
+
+// setUserName(){
+//   this.username="Peter"
+// }
+
+// getUserNameWithTemplate(val:string){
+//   this.username=val
+//   console.log(val)
+// }
+//  username="";
+
+// getUserName(event: Event){
+  // this.username = (event.target as HTMLInputElement).value
+  // console.log(name);
+  // this.username=name
+// 
