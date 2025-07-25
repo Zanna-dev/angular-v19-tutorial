@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -16,26 +16,14 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
- //data =  100;  
- count = signal(10);
+  //  data = signal<number | string>(10)
+  data:WritableSignal<number> = signal(10)
+  // count : Signal<number>=computed(()=>20
 
- constructor(){
-  effect(()=>{
-    console.log(this.count());
-  }
-
-  )
- }
- 
- updateValue(val:string){
-  // this.data=200
-  if(val=='dec'){
- this.count.set(this.count()-1)
-  }else{
-     this.count.set(this.count()+1)
-  }
- 
- }
+  updateValue(){
+    // this.data.set(true)
+    this.data.update(val=>val+10)
+   }
  
  
  title = 'Code Step By Step';
@@ -181,3 +169,24 @@ export class AppComponent {
   //   // console.log("function called",(event.target as HTMLInputElement).name);
   //   console.log("function called",(event.target as HTMLInputElement).value);
   // }
+
+
+  //count = signal(10);
+
+//  constructor(){
+//   effect(()=>{
+//     console.log(this.count());
+//   }
+
+//   )
+//  }
+ 
+//  updateValue(val:string){
+//   // this.data=200
+//   if(val=='dec'){
+//  this.count.set(this.count()-1)
+//   }else{
+//      this.count.set(this.count()+1)
+//   }
+ 
+//  }
