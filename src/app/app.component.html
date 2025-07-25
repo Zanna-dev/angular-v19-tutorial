@@ -1,36 +1,33 @@
-<h1>If Else | Control Flow</h1>
+<h1>Switch Case in Angular 19</h1>
+<button (click)="handlColor('red')">Red</button>
+<button (click)="handlColor('green')">Green</button>
+<button (click)="handlColor('yellow')">Yellow</button>
+<button (click)="handlColor('blue')">Blue</button>
 
-<!-- @if(val==10){
+<input type="text" placeholder="Enter color" (input)="changeColor($event)">
 
-<div style="background-color: orange; height: 200px; width: 200px;">
 
-</div>
-} -->
-
-<button (click)="hide()">Hide</button>
-<button (click)="show()">Show</button>
-<button (click)="toggle()">Toggle</button>
-<button (click)="toggle()"> {{
-    display? 'hide':'show' }} </button>
-@if(display){
-
-<div style="background-color: green; height: 200px; width: 200px;">
-
-</div>
+@switch(color){
+@case('red'){
+<h1 style="background-color: red;">Red color</h1>
 }
 
-<hr>
-<button (click)="toggleDivs()">Toggle Divs</button>
-@if(displayOneDiv){
-<div style="background-color: blue; width: 100px; height: 100px;">
-
-</div>
+@case('blue'){
+<h1 style="background-color: blue;">Blue color</h1>
 }
-@else{
-<div style="background-color: red; width: 100px; height: 100px;">
 
-</div>
+@case('yellow'){
+<h1 style="background-color: yellow;">Yellow color</h1>
 }
+
+@case('green'){
+<h1 style="background-color: green;">Green color</h1>
+}@default {
+    <h1 style="background-color: black; color: white;">No color Match</h1>
+}
+
+}
+
 
 
 
@@ -126,3 +123,36 @@ placeholder="eneter user name">
 <h2>Heading Tag 2</h2>
 <h2>Apple</h2>
 <h3 style="background-color: gold; color: #000; font-size: 50px;">This is Heading 3</h3> -->
+
+<!-- <h1>If Else | Control Flow</h1> -->
+<!-- @if(val==10){
+
+<div style="background-color: orange; height: 200px; width: 200px;">
+
+</div>
+} -->
+
+<!-- <button (click)="hide()">Hide</button>
+<button (click)="show()">Show</button>
+<button (click)="toggle()">Toggle</button>
+<button (click)="toggle()"> {{
+    display? 'hide':'show' }} </button>
+@if(display){
+
+<div style="background-color: green; height: 200px; width: 200px;">
+
+</div>
+}
+
+<hr>
+<button (click)="toggleDivs()">Toggle Divs</button>
+@if(displayOneDiv){
+<div style="background-color: blue; width: 100px; height: 100px;">
+
+</div>
+}
+@else{
+<div style="background-color: red; width: 100px; height: 100px;">
+
+</div>
+} -->

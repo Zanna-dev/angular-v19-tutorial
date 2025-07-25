@@ -13,27 +13,16 @@ import { UserComponent } from './user/user.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
-  display=true
-  val=10
-  displayOneDiv=true
-  hide(){
-    this.display=false
-  }
-
-  show(){
-    this.display=true
-  }
-
-  toggle(){
-    this.display=!this.display
-  }
-  toggleDivs(){
-    this.displayOneDiv=!this.displayOneDiv
-  }
-
-  // displayDiv=true
-
+    color='red'
+    handlColor(val:string){
+      this.color=val;
+    }
+    changeColor(event:Event){
+  this.color = (event.target as HTMLInputElement).value
+    }
 
    title = 'Code Step By Step';
 }
@@ -133,3 +122,22 @@ export class AppComponent {
   // console.log(name);
   // this.username=name
 // 
+ // display=true
+  // val=10
+  // displayOneDiv=true
+  // hide(){
+  //   this.display=false
+  // }
+
+  // show(){
+  //   this.display=true
+  // }
+
+  // toggle(){
+  //   this.display=!this.display
+  // }
+  // toggleDivs(){
+  //   this.displayOneDiv=!this.displayOneDiv
+  // }
+
+  // displayDiv=true
