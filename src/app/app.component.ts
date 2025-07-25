@@ -16,15 +16,10 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
-  users=['Anil', 'Sam', 'Peter', 'Bruce','Tony'];
-  students=[
-    {name:'Anil',age:29,email:'anil@test.com'},
-    {name:'Sam',age:20,email:'sam@test.com'},
-    {name:'Peter',age:26,email:'peter@test.com'},
-    {name:'Bruce',age:43,email:'bruce@test.com'},
-  ]
-  getName(name:string){
-    console.log(name)
+  handleEvent(event:Event){
+    console.log("function called",event.type);
+    // console.log("function called",(event.target as HTMLInputElement).name);
+    console.log("function called",(event.target as HTMLInputElement).value);
   }
 
    title = 'Code Step By Step';
@@ -153,3 +148,13 @@ export class AppComponent {
   //   changeColor(event:Event){
   // this.color = (event.target as HTMLInputElement).value
   //   }
+  //users=['Anil', 'Sam', 'Peter', 'Bruce','Tony'];
+  // students=[
+  //   {name:'Anil',age:29,email:'anil@test.com'},
+  //   {name:'Sam',age:20,email:'sam@test.com'},
+  //   {name:'Peter',age:26,email:'peter@test.com'},
+  //   {name:'Bruce',age:43,email:'bruce@test.com'},
+  // ]
+  // getName(name:string){
+  //   console.log(name)
+  // }
