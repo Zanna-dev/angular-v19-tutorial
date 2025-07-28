@@ -5,20 +5,48 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [NgIf],
+  imports: [NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
- show=true
+ student=["Anil","Sam", "Peter", "Sumit", "bruce"];
+
+studentData=[{
+  name:'anil',
+  age:30,
+  email:'anil@test.com'
+},
+{
+  name:'Sam',
+  age:30,
+  email:'sam@test.com'
+},
+{
+  name:'Bruce',
+  age:30,
+  email:'bruce@test.com'
+},
+{
+  name:'Tony',
+  age:30,
+  email:'tony@test.com'
+},
+{
+  name:'Peter',
+  age:30,
+  email:'peter@test.com'
+}
+]
+
 title = 'Code Step By Step';
 }
 

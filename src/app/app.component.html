@@ -1,6 +1,18 @@
-<h1 *ngIf="show">Heading Tag</h1>
+<h1>*ngFor Directives in Angular</h1>
 
+<ul>
+    <li *ngFor="let student of student">
+{{student}}
+    </li>
+</ul>
 
+<hr>
+
+<ul>
+<li *ngFor="let student of studentData">
+{{student.name}}, {{student.age}}, {{student.email}}
+</li>
+</ul>
 
 
 
