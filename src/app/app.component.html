@@ -1,10 +1,22 @@
-<h1>Effect in Angular</h1>
-<h1>{{count()}}</h1>
-<button (click)="count.set(count()+1)">Update userName</button>
+<h1>For Loop Contextual Variables</h1>
+@for(user of users; track user; let e=$even; let o=$odd){
+<!-- @if($first || $last){
+<h3 style="background-color: green;">This is user No {{$index}}and name is {{user}}</h3>
+}@else {
+<h3>This is user No {{$index}}and name is {{user}}</h3>
+} -->
 
-@if(displayHeading){
-<h1 style="background-color: green;">Main Heading</h1>
+@if(e){
+    <h3 style="background-color: #ddd;">This is user No {{$index}} and name is {{user}}</h3>
 }
+
+@if(o){
+    <h3 style="background-color: greenyellow;">This is user No {{$index}} and name is {{user}}</h3>
+}
+}@empty(){
+    <h4>No records found</h4>
+}
+
 
 
 
@@ -176,7 +188,7 @@ placeholder="eneter user name">
 } -->
 
 
- <!-- <h1>For Loop in Angular 19</h1>
+<!-- <h1>For Loop in Angular 19</h1>
 
 @for (user of users; track user) {
     <h2> {{user}} </h2>
@@ -190,7 +202,7 @@ placeholder="eneter user name">
         <span>{{student.email}}</span>
         <button (click)="getName(student.name)">Get Name</button>
     </h2>
-} --> 
+} -->
 
 <!-- <h1>Event in Angular 19</h1> 
 <button class="btn" name="login" (click)="handleEvent($event)">Click on Button</button>
@@ -211,7 +223,7 @@ style="background-color: red; height: 100px; width: 100px;">
 
 
 <!-- <h1>{{data}}</h1> -->
- <!-- <button (click)="updateValue('dec')">Decreament</button>
+<!-- <button (click)="updateValue('dec')">Decreament</button>
 <h2>{{count()}}</h2>
 <button (click)="updateValue('inc')">Increament</button> -->
 <!-- <h1>Basic Of Signal</h1>  -->
@@ -221,3 +233,9 @@ style="background-color: red; height: 100px; width: 100px;">
 <button (click)="updateValue()">update Value</button>
 
 <button (click)="updateValue()">update X Value</button> -->
+<!-- <h1>{{count()}}</h1>
+<button (click)="count.set(count()+1)">Update userName</button>
+
+@if(displayHeading){
+<h1 style="background-color: green;">Main Heading</h1>
+} -->

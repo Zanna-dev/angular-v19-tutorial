@@ -16,27 +16,10 @@ import { UserComponent } from './user/user.component';
 
 
 export class AppComponent {
- 
-userName=signal('Anil');
-count=signal(0)
-displayHeading=false
+ users=['Anil', 'Sam','Peter','Bruce','Smith','Vinay','John','Favor'];
 
-constructor(){
-  effect(()=>{
-  if(this.count()==2){
-    this.displayHeading=true
-    setTimeout(()=>{
-      this.displayHeading=false
-    }, 2000)
-  }else{
-    this.displayHeading=false
-  }
-
-    // console.log(this.userName())
-  })
-}
- 
- title = 'Code Step By Step';
+//  users=[]
+title = 'Code Step By Step';
 }
 
 
@@ -227,3 +210,23 @@ constructor(){
 //  updateXValue(){
 //   this.x.set(1000)
 //  }
+
+// userName=signal('Anil');
+// count=signal(0)
+// displayHeading=false
+
+// constructor(){
+//   effect(()=>{
+//   if(this.count()==2){
+//     this.displayHeading=true
+//     setTimeout(()=>{
+//       this.displayHeading=false
+//     }, 2000)
+//   }else{
+//     this.displayHeading=false
+//   }
+
+//     // console.log(this.userName())
+//   })
+// }
+ //title = 'Code Step By Step';
