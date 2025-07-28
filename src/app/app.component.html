@@ -1,13 +1,16 @@
-<h1>Two Way Binding</h1>
-<input type="text" [(ngModel)]="name" placeholder="enter name">
-<h1>{{name}}</h1>
+<h1>To-Do-List</h1>
 
-<!-- <input type="text"  placeholder="enter name" (input)="changeName($event)">
-<h1>{{name}}</h1> -->
+<input [(ngModel)]="task" type="text" placeholder="enter task name">
+<button (click)="addTask()">Add Task</button>
 
-
-
-
+@for(task of taskList; track task.id){
+    <!-- <h1>{{task.name}}</h1> -->
+     <ul class="task-list">
+        <li>{{task.id}}</li>
+        <li>{{task.name}}</li>
+        <li><button (click)="deleteTask(task.id)">Delete</button></li>
+     </ul>
+}
 
 
 
@@ -272,3 +275,8 @@ style="background-color: red; height: 100px; width: 100px;">
 }@empty(){
     <h4>No records found</h4>
 } -->
+    <!-- <input type="text" [(ngModel)]="name" placeholder="enter name">
+<h1>{{name}}</h1> -->
+
+<!-- <input type="text"  placeholder="enter name" (input)="changeName($event)">
+<h1>{{name}}</h1> -->

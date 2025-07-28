@@ -17,12 +17,16 @@ import { FormsModule } from '@angular/forms';
 
 
 export class AppComponent {
-name="Anil"
-changeName(event:Event) {
-  const val=(event.target as HTMLInputElement).value;
-  this.name=val;
+task="";
+taskList:{id:number,name:string}[]=[]
+addTask(){
+  this.taskList.push({id:this.taskList.length+1,name:this.task})
+  // console.log(this.taskList);
+  this.task="";
 }
-
+deleteTask(id:number){
+this.taskList= this.taskList.filter((item)=>item.id!=id)
+}
 
 title = 'Code Step By Step';
 }
@@ -236,3 +240,10 @@ title = 'Code Step By Step';
 // }
  //title = 'Code Step By Step';
  //users=['Anil', 'Sam','Peter','Bruce','Smith','Vinay','John','Favor'];
+ 
+
+ // name="Anil"
+// changeName(event:Event) {
+//   const val=(event.target as HTMLInputElement).value;
+//   this.name=val;
+// }
