@@ -4,21 +4,26 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
- users=['Anil', 'Sam','Peter','Bruce','Smith','Vinay','John','Favor'];
+name="Anil"
+changeName(event:Event) {
+  const val=(event.target as HTMLInputElement).value;
+  this.name=val;
+}
 
-//  users=[]
+
 title = 'Code Step By Step';
 }
 
@@ -230,3 +235,4 @@ title = 'Code Step By Step';
 //   })
 // }
  //title = 'Code Step By Step';
+ //users=['Anil', 'Sam','Peter','Bruce','Smith','Vinay','John','Favor'];
