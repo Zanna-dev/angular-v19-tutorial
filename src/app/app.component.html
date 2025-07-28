@@ -1,8 +1,4 @@
-<!-- <h1 style="background-color: red;">Dynamic Style</h1> -->
-<h1 [style.color]="color" [style.fontSize]="fontSizeNormal">Heading Tag</h1>
-<h1 [style.fontSize]="zoom ? fontSizeBig : fontSizeNormal" >Heading Tag 2</h1>
-<button (click)="zoomToggle()">Zoom Toggle</button>
-<h1 [style.fontSize.pt]="size">Heading tag 3</h1>
+<h1 *ngIf="show">Heading Tag</h1>
 
 
 
@@ -284,3 +280,11 @@ style="background-color: red; height: 100px; width: 100px;">
         <li><button (click)="deleteTask(task.id)">Delete</button></li>
      </ul>
 } -->
+
+
+
+<!-- <h1 style="background-color: red;">Dynamic Style</h1> -->
+<!-- <h1 [style.color]="color" [style.fontSize]="fontSizeNormal">Heading Tag</h1>
+<h1 [style.fontSize]="zoom ? fontSizeBig : fontSizeNormal" >Heading Tag 2</h1>
+<button (click)="zoomToggle()">Zoom Toggle</button>
+<h1 [style.fontSize.pt]="size">Heading tag 3</h1> -->

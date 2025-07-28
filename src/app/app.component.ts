@@ -5,26 +5,20 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [FormsModule],
+  imports: [NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-color="green";
-fontSizeNormal="30px";
-fontSizeBig="60px";
-size=30
-zoom=true;
-zoomToggle(){
-this.zoom=!this.zoom;
-}
+ show=true
 title = 'Code Step By Step';
 }
 
@@ -253,4 +247,12 @@ title = 'Code Step By Step';
 // }
 // deleteTask(id:number){
 // this.taskList= this.taskList.filter((item)=>item.id!=id)
+// }
+// color="green";
+// fontSizeNormal="30px";
+// fontSizeBig="60px";
+// size=30
+// zoom=true;
+// zoomToggle(){
+// this.zoom=!this.zoom;
 // }
