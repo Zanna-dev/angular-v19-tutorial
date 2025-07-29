@@ -5,35 +5,24 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [NgIf],
+  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-
-  login=true
-
-  loginToggle(){
-    this.login=!this.login
-  }
-// show=true
-// block=1
-
-// updateBlockVal(){
-//   this.block++;
-// }
-// toggle(){
-//   this.show=!this.show;
-// }
-
+color="black"
+ 
+changeColor(color:string){
+this.color=color
+}
 title = 'Code Step By Step';
 }
 
@@ -199,6 +188,8 @@ title = 'Code Step By Step';
 //  }
 
 
+
+
  //  data = signal<number | string>(10)
   // data:WritableSignal<number> = signal(10)
   // count : Signal<number>=computed(()=>20
@@ -300,3 +291,19 @@ title = 'Code Step By Step';
 //   email:'peter@test.com'
 // }
 // ]
+
+
+ // login=true
+
+  // loginToggle(){
+  //   this.login=!this.login
+  // }
+// show=true
+// block=1
+
+// updateBlockVal(){
+//   this.block++;
+// }
+// toggle(){
+//   this.show=!this.show;
+// }
