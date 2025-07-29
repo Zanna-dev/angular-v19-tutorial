@@ -1,4 +1,5 @@
 import { Component} from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-profile',
@@ -9,4 +10,19 @@ import { Component} from "@angular/core";
 })
 export class ProfileComponent{
 
+    userName:string|null='';
+constructor(private route:ActivatedRoute){}
+ngOnInit(){
+        // this.userName=this.route.snapshot.paramMap.get('name')
+        // console.log(user);
+        // this.route.queryParams.subscribe(params=>{
+        //     console.log(params['name']);
+        //     this.userName=params['name']
+        // })
+
+        this.route.data.subscribe(params=>{
+            this.userName=params['name']
+            console.log(params)
+        })
+    }
 }
