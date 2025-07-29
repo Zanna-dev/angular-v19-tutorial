@@ -1,5 +1,5 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,18 +11,14 @@ import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/c
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-color="black"
- 
-changeColor(color:string){
-this.color=color
-}
+
 title = 'Code Step By Step';
 }
 
@@ -306,4 +302,9 @@ title = 'Code Step By Step';
 // }
 // toggle(){
 //   this.show=!this.show;
+// }
+// color="black"
+ 
+// changeColor(color:string){
+// this.color=color
 // }
