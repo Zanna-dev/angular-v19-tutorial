@@ -1,6 +1,16 @@
-h1{
+/* h1{
     background-color: #000;
     color: gold;
     width: 400px;
     border-radius: 10px;
+} */
+
+h2{
+    border: 1px solid red;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+h2 span{
+    background-color: red;
 }

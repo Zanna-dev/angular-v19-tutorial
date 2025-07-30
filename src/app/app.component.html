@@ -1,5 +1,57 @@
-<h1>Pass Data to Child Component</h1>
-<app-user [user]="userName" city="Noida"></app-user>
+<h1>Reuse Component</h1>
+@for(user of users; track user){
+    <div>
+        <app-user [user]="user"></app-user>
+    </div>
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-user [user]="userName" city="Noida"></app-user>
 
 
 <select #selectedUser (change)="changeUser(selectedUser.value)" name="" id="">
@@ -7,7 +59,7 @@
     <option value="Peter">Peter</option>
     <option value="sam">Sam</option>
     <option value="tony">Tony</option>
-</select>
+</select> -->
 
 
 
@@ -173,7 +225,7 @@ formControlName="name"
 
 
 
-<!-- <input type="text" placeholder="enter name" [formControl]="name">
+<! <input type="text" placeholder="enter name" [formControl]="name">
 <br><br>
 <input type="text" placeholder="enter password" [formControl]="password">
 <br><br>

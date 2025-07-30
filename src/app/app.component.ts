@@ -19,11 +19,18 @@ import { HeaderComponent } from './header/header.component';
 
 
 export class AppComponent {
-userName = "Bruce"
+users=['Anil','Bruce','Peter','John','Tony']
 
-changeUser(val: string){
-  this.userName=val;
-}
+
+
+
+
+
+// userName = "Bruce"
+
+// changeUser(val: string){
+//   this.userName=val;
+// }
   
   }
 

@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent {
 @Input() user:string=''
-@Input() city:string=''
+// @Input() city:string=''
 }
 
 
