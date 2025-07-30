@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 
@@ -12,35 +12,72 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-profileForm=new FormGroup({
-  name:new FormControl('', [Validators.required]),
-   password:new FormControl('', [Validators.required,Validators.minLength(5)]),
-    email:new FormControl('', [Validators.required,Validators.maxLength(30),Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
 
-});
+  userData:any;
+  addDetails(val:NgForm){
+    console.log(val);
+    this.userData=val;
+  }
 
-    submitData(){
-      console.log(this.profileForm.value);
-    }
 
-    get name(){
-      return this.profileForm.get('name')
-    }
 
-    get email(){
-      return this.profileForm.get('email')
-    }
 
-    get password(){
-      return this.profileForm.get('password')
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// profileForm=new FormGroup({
+//   name:new FormControl('', [Validators.required]),
+//    password:new FormControl('', [Validators.required,Validators.minLength(5)]),
+//     email:new FormControl('', [Validators.required,Validators.maxLength(30),Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+
+// });
+
+//     submitData(){
+//       console.log(this.profileForm.value);
+//     }
+
+//     get name(){
+//       return this.profileForm.get('name')
+//     }
+
+//     get email(){
+//       return this.profileForm.get('email')
+//     }
+
+//     get password(){
+//       return this.profileForm.get('password')
+//     }
     // setValues(){
     //   this.profileForm.setValue({
     //     name:'peter',
