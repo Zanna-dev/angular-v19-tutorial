@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 
@@ -12,13 +12,29 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [RouterOutlet, RouterLink, HeaderComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
+
+  name=new FormControl('anil');
+  password=new FormControl('123');
+  email=new FormControl('anil@test.com');
+
+  getValue(){
+    console.log(this.name.value);
+    console.log(this.password.value);
+    console.log(this.email.value);
+  }
+
+   SetValue(){
+     this.name.setValue("peter")
+      this.password.setValue("1234")
+       this.email.setValue("peter@test.com")
+  }
 
 title = 'Code Step By Step';
 }
@@ -41,7 +57,7 @@ title = 'Code Step By Step';
 
 
 
-
+// RouterOutlet, RouterLink, HeaderComponent
 
 // name = "Anil Sidhu";
   // data = 100;

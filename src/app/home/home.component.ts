@@ -8,9 +8,9 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private router:Router){
+  // constructor(private router:Router){
 
-  }
+  // }
 // goToProfile(){
 // this.router.navigate(['profile'], {queryParams:{name:'Anil Sidhu'}})
 // }
