@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
