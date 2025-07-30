@@ -12,18 +12,19 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [FormsModule, NgIf],
+  imports: [UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
+userName = "Bruce"
 
-  userData:any;
-  addDetails(val:NgForm){
-    console.log(val);
-    this.userData=val;
+changeUser(val: string){
+  this.userName=val;
+}
+  
   }
 
 
@@ -114,8 +115,7 @@ export class AppComponent {
   //      this.email.setValue("peter@test.com")
   // }
 
-title = 'Code Step By Step';
-}
+// title = 'Code Step By Step';
 
 
 
@@ -133,7 +133,10 @@ title = 'Code Step By Step';
 
 
 
-
+//userData:any;
+  // addDetails(val:NgForm){
+  //   console.log(val);
+  //   this.userData=val;
 
 // RouterOutlet, RouterLink, HeaderComponent
 

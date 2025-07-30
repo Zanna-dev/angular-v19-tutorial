@@ -1,6 +1,72 @@
-<h1>Template Driven Form</h1>
+<h1>Pass Data to Child Component</h1>
+<app-user [user]="userName" city="Noida"></app-user>
 
-<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+
+<select #selectedUser (change)="changeUser(selectedUser.value)" name="" id="">
+    <option value="Anil">Anil</option>
+    <option value="Peter">Peter</option>
+    <option value="sam">Sam</option>
+    <option value="tony">Tony</option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
     <input required #name="ngModel" type="text" placeholder="enter name" name="name" ngModel>
     <span class="error" *ngIf="name.invalid && name.touched"> Name is required field</span>
     <br><br>
@@ -33,14 +99,14 @@
 
     <input type="range" min="0" max="20" name="range" ngModel>
     <br><br>
-    <button [disabled]="userForm.invalid">Add User</button>
+    <button [disabled]="userForm.invalid">Add User</button> -->
     <!-- <button type="button" (click)="setValues()">Set Values</button> -->
-</form>
+<!-- 
+    
 
-<h3>{{userData?.name}}</h3>
-<h3>{{userData?.password}}</h3>
-<h3>{{userData?.gender}}</h3>
-<h3>{{userData?.range}}</h3>
+
+
+-->
 
 <!-- min="0" max="20" -->
 

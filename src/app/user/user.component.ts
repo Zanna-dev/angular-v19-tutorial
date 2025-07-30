@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,17 +10,64 @@ import { ActivatedRoute } from '@angular/router';
 
 })
 export class UserComponent {
-  name:string|null="";
-  id:string|null="";
-constructor(private route:ActivatedRoute){
-
+@Input() user:string=''
+@Input() city:string=''
 }
 
-ngOnInit(){
-  this.route.params.subscribe((params)=>{
-    this.name=params['name']
-    this.id=params['id']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   name:string|null="";
+//   id:string|null="";
+// constructor(private route:ActivatedRoute){
+
+// }
+
+// ngOnInit(){
+//   this.route.params.subscribe((params)=>{
+//     this.name=params['name']
+//     this.id=params['id']
    
-  })
-}
-}
+//   })
+// }
