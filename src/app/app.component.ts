@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 
@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,22 +20,34 @@ import { HeaderComponent } from './header/header.component';
 
 export class AppComponent {
 profileForm=new FormGroup({
-  name:new FormControl('anil'),
-   password:new FormControl('123'),
-    email:new FormControl('anil@TestBed.com'),
+  name:new FormControl('', [Validators.required]),
+   password:new FormControl('', [Validators.required,Validators.minLength(5)]),
+    email:new FormControl('', [Validators.required,Validators.maxLength(30),Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
 
 });
 
     submitData(){
       console.log(this.profileForm.value);
     }
-    setValues(){
-      this.profileForm.setValue({
-        name:'peter',
-        password:"2461",
-        email:"peter@test.com"
-      })
+
+    get name(){
+      return this.profileForm.get('name')
     }
+
+    get email(){
+      return this.profileForm.get('email')
+    }
+
+    get password(){
+      return this.profileForm.get('password')
+    }
+    // setValues(){
+    //   this.profileForm.setValue({
+    //     name:'peter',
+    //     password:"2461",
+    //     email:"peter@test.com"
+    //   })
+    // }
 
 
 
