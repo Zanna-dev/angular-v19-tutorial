@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 
@@ -19,22 +19,51 @@ import { HeaderComponent } from './header/header.component';
 
 
 export class AppComponent {
+profileForm=new FormGroup({
+  name:new FormControl('anil'),
+   password:new FormControl('123'),
+    email:new FormControl('anil@TestBed.com'),
 
-  name=new FormControl('anil');
-  password=new FormControl('123');
-  email=new FormControl('anil@test.com');
+});
 
-  getValue(){
-    console.log(this.name.value);
-    console.log(this.password.value);
-    console.log(this.email.value);
-  }
+    submitData(){
+      console.log(this.profileForm.value);
+    }
+    setValues(){
+      this.profileForm.setValue({
+        name:'peter',
+        password:"2461",
+        email:"peter@test.com"
+      })
+    }
 
-   SetValue(){
-     this.name.setValue("peter")
-      this.password.setValue("1234")
-       this.email.setValue("peter@test.com")
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+  // name=new FormControl('anil');
+  // password=new FormControl('123');
+  // email=new FormControl('anil@test.com');
+
+  // getValue(){
+  //   console.log(this.name.value);
+  //   console.log(this.password.value);
+  //   console.log(this.email.value);
+  // }
+
+  //  SetValue(){
+  //    this.name.setValue("peter")
+  //     this.password.setValue("1234")
+  //      this.email.setValue("peter@test.com")
+  // }
 
 title = 'Code Step By Step';
 }
