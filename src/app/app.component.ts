@@ -16,7 +16,7 @@ import { User } from './interfaces/User';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [], 
+  imports: [FormsModule], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,12 +27,25 @@ users:User[]=[]
   constructor(private usersService:UsersService){}
 
   ngOnInit(){
+    this.getUser();
+  }
+
+  getUser(){
     this.usersService.getUser().subscribe((data:User[])=>{
       console.log(data);
       this.users=data;
     })
   }
-}
+
+  addUser(user:User){
+    console.log(user)
+    this.usersService.saveUser(user).subscribe((data:User)=>{
+      console.log(data);
+      if(data){
+        this.getUser()
+      }
+  })
+}}
 
 
 

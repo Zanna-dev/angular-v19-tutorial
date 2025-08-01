@@ -1,4 +1,13 @@
 <h1>API Call Service</h1>
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+    <input type="text" placeholder="enter name" name="name" ngModel>
+    <br><br>
+     <input type="text" placeholder="enter email" name="email" ngModel>
+    <br><br>
+     <input type="text" placeholder="enter age" name="age" ngModel>
+    <br><br>
+</form><button>Add User</button>
+
 
 @for(user of users;track user.id){
     <ul>
