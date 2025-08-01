@@ -7,22 +7,23 @@ import { UserComponent } from './user/user.component';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
+import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [CommonModule], 
+  imports: [CommonModule, CurrencyConverterPipe], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-title="Code Step By Step"
-name="Anil Sidhu"
-today= new Date();
-amount=10
+// title="Code Step By Step"
+// name="Anil Sidhu"
+// today= new Date();
+amount=20
 }
 
 
