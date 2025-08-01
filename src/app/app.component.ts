@@ -9,6 +9,7 @@ import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } fr
 import { HeaderComponent } from './header/header.component';
 import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
 import { ProductService } from './services/product.service';
+import { UsersService } from './services/users.service';
 
 
 @Component({
@@ -21,15 +22,15 @@ import { ProductService } from './services/product.service';
 
 
 export class AppComponent {
-    productData:any
- constructor(private productService:ProductService){}
+users:any
+  constructor(private usersService:UsersService){}
 
- ngOnInit(){
-  this.productService.productList().subscribe((data:any)=>{
-    console.log(data);
-    this.productData=data.products;
-  })
- }
+  ngOnInit(){
+    this.usersService.getUser().subscribe((data:any)=>{
+      console.log(data);
+      this.users=data;
+    })
+  }
 }
 
 
@@ -106,7 +107,15 @@ export class AppComponent {
 //   this.counter++
 // }
 
+//     productData:any
+//  constructor(private productService:ProductService){}
 
+//  ngOnInit(){
+//   this.productService.productList().subscribe((data:any)=>{
+//     console.log(data);
+//     this.productData=data.products;
+//   })
+//  }
 
 
 
