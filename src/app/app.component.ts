@@ -21,17 +21,16 @@ import { ProductService } from './services/product.service';
 
 
 export class AppComponent {
-  productData: {
-    name: string;
-    category: string;
-    price: string;
-}[] | undefined
+    productData:any
+ constructor(private productService:ProductService){}
 
-  constructor(private productService:ProductService){}
-getData(){
-  this.productData= this.productService.getProductData()
+ ngOnInit(){
+  this.productService.productList().subscribe((data:any)=>{
+    console.log(data);
+    this.productData=data.products;
+  })
+ }
 }
-}
 
 
 
@@ -59,7 +58,16 @@ getData(){
 
 
 
+//   productData: {
+//     name: string;
+//     category: string;
+//     price: string;
+// }[] | undefined
 
+//   constructor(private productService:ProductService){}
+// getData(){
+//   this.productData= this.productService.getProductData()
+// }
 
 // userName = "Bruce"
 
