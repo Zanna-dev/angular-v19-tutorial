@@ -17,7 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [FormsModule, RouterLink, RouterOutlet], 
+  imports: [], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
