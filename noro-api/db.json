@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "age": 30,
+      "email": "john@test.com"
+    },
+    {
+      "id": "2",
+      "name": "Anil",
+      "age": 20,
+      "email": "anil@test.com"
+    },
+    {
+      "id": "3",
+      "name": "Sam",
+      "age": 50,
+      "email": "sam@test.com"
+    },
+    {
+      "id": "4",
+      "name": "Peter",
+      "age": 40,
+      "email": "peter@test.com"
+    },
+    {
+      "id": "5",
+      "name": "Bruce",
+      "age": 10,
+      "email": "bruce@test.com"
+    },
+    {
+      "id": "6",
+      "name": "tONY",
+      "age": 29,
+      "email": "tony@test.com"
+    }
+  ]
+}
