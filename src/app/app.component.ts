@@ -50,7 +50,12 @@ selectedUser:User|undefined
   })
 
     }else{
-      console.log("for update user info", user)
+      const userData={...user,id:this.selectedUser.id}
+      this.usersService.updateUser(userData).subscribe((data)=>{
+        if(data){
+        this.getUser()
+      }
+      })
     }
    
 }

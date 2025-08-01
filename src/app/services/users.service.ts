@@ -27,4 +27,8 @@ return this.http.delete<User>(this.url+"/"+id);
   getSelectedUser(id:string):Observable<User>{
 return this.http.get<User>(this.url+"/"+id);
   }
+
+  updateUser(user:User):Observable<User>{
+    return this.http.put<User>(this.url+"/"+user.id,user)
+  }
 }
