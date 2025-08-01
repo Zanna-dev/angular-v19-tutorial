@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,8 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 
 })
 export class UserComponent {
-@Input() user:string=''
-// @Input() city:string=''
+  @Output() getUsers= new EventEmitter();
+ users=['Anil','Bruce','Peter','John','Tony']
+ passData(){
+  this.getUsers.emit(this.users)
+ }
 }
 
 
@@ -71,3 +74,4 @@ export class UserComponent {
    
 //   })
 // }
+

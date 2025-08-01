@@ -1,9 +1,7 @@
-<h1>Reuse Component</h1>
+<h1>Pass data child to Component</h1>
+<app-user (getUsers)="handleUsers($event)"></app-user>
 @for(user of users; track user){
-    <div>
-        <app-user [user]="user"></app-user>
-    </div>
-    
+    <h1>{{user}}</h1>
 }
 
 
@@ -60,6 +58,13 @@
     <option value="sam">Sam</option>
     <option value="tony">Tony</option>
 </select> -->
+
+<!-- @for(user of users; track user){
+    <div>
+        <app-user [user]="user"></app-user>
+    </div>
+    
+} -->
 
 
 

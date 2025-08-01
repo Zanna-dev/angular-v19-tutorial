@@ -19,7 +19,13 @@ import { HeaderComponent } from './header/header.component';
 
 
 export class AppComponent {
-users=['Anil','Bruce','Peter','John','Tony']
+  users:string[]| undefined;
+// users=['Anil','Bruce','Peter','John','Tony']
+
+handleUsers(users:string[]){
+  console.log(users);
+  this.users=users
+}
 
 
 
