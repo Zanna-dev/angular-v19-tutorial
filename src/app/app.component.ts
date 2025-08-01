@@ -5,27 +5,48 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [UserComponent],
+  imports: [CommonModule], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-  users:string[]| undefined;
-// users=['Anil','Bruce','Peter','John','Tony']
-
-handleUsers(users:string[]){
-  console.log(users);
-  this.users=users
+title="Code Step By Step"
+name="Anil Sidhu"
+today= new Date();
+amount=10
 }
+
+
+
+
+
+// UserComponent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,7 +59,12 @@ handleUsers(users:string[]){
 //   this.userName=val;
 // }
   
-  }
+    // users:string[]| undefined;
+// users=['Anil','Bruce','Peter','John','Tony']
+
+// handleUsers(users:string[]){
+//   console.log(users);
+//   this.users=users
 
 
 
