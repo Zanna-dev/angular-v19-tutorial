@@ -11,62 +11,71 @@ import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
 import { ProductService } from './services/product.service';
 import { UsersService } from './services/users.service';
 import { User } from './interfaces/User';
+import { AdminComponent } from './admin/admin.component';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [FormsModule], 
+  imports: [FormsModule, RouterLink, RouterOutlet], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-users:User[]=[]
-selectedUser:User|undefined
-  constructor(private usersService:UsersService){}
 
-  ngOnInit(){
-    this.getUser();
-  }
 
-  getUser(){
-    this.usersService.getUser().subscribe((data:User[])=>{
-      console.log(data);
-      this.users=data;
-    })
-  }
 
-  addUser(user:User){
 
-    if(!this.selectedUser){
-       console.log(user)
-    this.usersService.saveUser(user).subscribe((data:User)=>{
-      console.log(data);
-      if(data){
-        this.getUser()
-      }
-  })
 
-    }else{
-      const userData={...user,id:this.selectedUser.id}
-      this.usersService.updateUser(userData).subscribe((data)=>{
-        if(data){
-        this.getUser()
-      }
-      })
-    }
+
+
+
+// users:User[]=[]
+// selectedUser:User|undefined
+//   constructor(private usersService:UsersService){}
+
+//   ngOnInit(){
+//     this.getUser();
+//   }
+
+//   getUser(){
+//     this.usersService.getUser().subscribe((data:User[])=>{
+//       console.log(data);
+//       this.users=data;
+//     })
+//   }
+
+//   addUser(user:User){
+
+//     if(!this.selectedUser){
+//        console.log(user)
+//     this.usersService.saveUser(user).subscribe((data:User)=>{
+//       console.log(data);
+//       if(data){
+//         this.getUser()
+//       }
+//   })
+
+//     }else{
+//       const userData={...user,id:this.selectedUser.id}
+//       this.usersService.updateUser(userData).subscribe((data)=>{
+//         if(data){
+//         this.getUser()
+//       }
+//       })
+//     }
    
-}
+// }
 
-selectUser(id:string){
-this.usersService.getSelectedUser(id).subscribe((data:User)=>{
-  console.log(data);
-  this.selectedUser=data
-})
+// selectUser(id:string){
+// this.usersService.getSelectedUser(id).subscribe((data:User)=>{
+//   console.log(data);
+//   this.selectedUser=data
+// })
 
-}
+// }
 
 }
 

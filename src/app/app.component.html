@@ -1,5 +1,34 @@
-<h1>API Call Service</h1>
-<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+<h1>Route Lazy Loading</h1>
+<a routerLink="admin">Go to Admin</a>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>API Call Service</h1> -->
+<!-- <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
     <input type="text" placeholder="enter name" name="name" [ngModel]="selectedUser?.name">
     <br><br>
      <input type="text" placeholder="enter email" name="email" [ngModel]="selectedUser?.email">
@@ -24,7 +53,7 @@
         <li><button (click)="selectUser(user.id)">Update</button></li>
         
     </ul>
-}
+} -->
 
 
 
