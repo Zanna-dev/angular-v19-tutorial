@@ -24,6 +24,7 @@ import { User } from './interfaces/User';
 
 export class AppComponent {
 users:User[]=[]
+selectedUser:User|undefined
   constructor(private usersService:UsersService){}
 
   ngOnInit(){
@@ -38,14 +39,31 @@ users:User[]=[]
   }
 
   addUser(user:User){
-    console.log(user)
+
+    if(!this.selectedUser){
+       console.log(user)
     this.usersService.saveUser(user).subscribe((data:User)=>{
       console.log(data);
       if(data){
         this.getUser()
       }
   })
-}}
+
+    }else{
+      console.log("for update user info", user)
+    }
+   
+}
+
+selectUser(id:string){
+this.usersService.getSelectedUser(id).subscribe((data:User)=>{
+  console.log(data);
+  this.selectedUser=data
+})
+
+}
+
+}
 
 
 
