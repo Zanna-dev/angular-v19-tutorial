@@ -10,11 +10,38 @@ import { ActivatedRoute } from '@angular/router';
 
 })
 export class UserComponent {
-  @Output() getUsers= new EventEmitter();
- users=['Anil','Bruce','Peter','John','Tony']
- passData(){
-  this.getUsers.emit(this.users)
- }
+  // name="anil"
+  @Input() counter=0
+
+// constructor(){
+//   console.log("constructor")
+// }
+
+// ngOnInit(){
+
+
+//   // this.name="sam"
+//   console.log("ngOnInit")
+// }
+
+// ngOnDestroy(){
+//   console.log("ngOnDestroy")
+//   alert("this component will be hidden")
+// }
+
+// ngOnChanges(){
+//   console.log("ngOnChanges")
+// }
+
+
+
+
+
+//   @Output() getUsers= new EventEmitter();
+//  users=['Anil','Bruce','Peter','John','Tony']
+//  passData(){
+//   this.getUsers.emit(this.users)
+//  }
 }
 
 

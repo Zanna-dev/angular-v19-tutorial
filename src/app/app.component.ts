@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
+import { afterNextRender, afterRender, Component, computed, effect, signal, ViewChild, WritableSignal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -8,29 +8,36 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
+import { ProductService } from './services/product.service';
 
 
 @Component({
   selector: 'app-root',
   // imports: [LoginComponent, SignupComponent, ProfileComponent],
-  imports: [CommonModule, CurrencyConverterPipe], 
+  imports: [], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
-// title="Code Step By Step"
-// name="Anil Sidhu"
-// today= new Date();
-amount=20
+  productData: {
+    name: string;
+    category: string;
+    price: string;
+}[] | undefined
+
+  constructor(private productService:ProductService){}
+getData(){
+  this.productData= this.productService.getProductData()
+}
 }
 
 
 
 
 
-// UserComponent
+
 
 
 
@@ -68,10 +75,28 @@ amount=20
 //   this.users=users
 
 
+// title="Code Step By Step"
+// name="Anil Sidhu"
+// today= new Date();
+// amount=20
 
 
+//   @ViewChild('users') UserComponent:any
+// counter=0;
 
-
+// constructor(){
+//   afterRender(()=>{
+//     console.log("afterRender", this.UserComponent.counter);
+    
+//   })
+//     afterNextRender(()=>{
+//     console.log("afterNextRender", this.UserComponent.counter);
+    
+//   })
+// }
+// updateCounter(){
+//   this.counter++
+// }
 
 
 
